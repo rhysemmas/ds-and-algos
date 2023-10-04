@@ -15,7 +15,8 @@ def insertion_sort(array)
       # decrement the left pointer so we can compare further back the array next time
       left -= 1
     end
-    # insert our temp value for this pass to the right of our left pointer (into the "gap")
+    # insert our temp value for this pass to the right of our (now decremented) left pointer
+    # (into the "gap" left by the old left)
     array[left + 1] = temp_value
   end
 

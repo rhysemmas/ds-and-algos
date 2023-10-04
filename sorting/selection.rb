@@ -9,13 +9,11 @@ def selection_sort(array)
     (sorted_until_index..array.length - 1).each do |i|
       # if we have a value in the array lower than our pass start point then swap them
       array[sorted_until_index], array[i] = array[i], array[sorted_until_index] if array[i] < array[sorted_until_index]
-
       # jump to the next iteration unless we have reached the end of the array
       next unless i == array.length - 1
 
       # increment the start point for the next pass
       sorted_until_index += 1
-
       # we have sorted the array if our sorted until index reaches the end of the array
       sorted = true if sorted_until_index == array.length - 1
     end
@@ -28,3 +26,9 @@ puts "got sorted array: #{array}"
 
 array = selection_sort([-9, 3, 2, 7, 11, -5])
 puts "got sorted array: #{array}"
+
+# is this just a bubble sort that bubbles small values to the left?
+# i don't think so - i think it just doesn't find the smallest value which is
+# what selection sort is meant to do: start at an index, find the smallest var in the
+# array and swap it to that starting index
+# yeah, pretty much doing this i think: https://stackoverflow.com/questions/59428286/selection-sort-storing-value-instead-of-index
