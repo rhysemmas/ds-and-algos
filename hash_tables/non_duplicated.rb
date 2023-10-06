@@ -13,10 +13,11 @@ def non_duplicated(string)
   string.each_char do |c|
     return c if hash[c] == 1
   end
+  ''
 end
 
 character = non_duplicated('minimum')
 puts "got non-duplicated character: #{character}"
 
 # This is O(n) - it is really O(2n), is there anyway to avoid iterating the array (or the hash)
-# to find the non-duplicated value?
+# to find the non-duplicated value? Ruby hashes retain the order keys were inserted if that's any help
