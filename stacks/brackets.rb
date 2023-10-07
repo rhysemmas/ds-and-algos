@@ -27,7 +27,7 @@ def syntax_checker(string)
     stack.push(c) && next if bracket_types.key?(c)
 
     # iterate over the values of the map (closing brackets) and check if they match our char
-    bracket_types.each_value do |v|
+    bracket_types.each_value do |v| # makes this O(3n)? == O(n)
       # skip to next if no match
       next unless c == v
 
