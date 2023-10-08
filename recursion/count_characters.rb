@@ -1,6 +1,6 @@
 def count_characters(array)
-  # base case - if array is empty, number of characters must be zero
-  return 0 if array.empty?
+  # base case - if array only has one element, return its length
+  return array[0].length if array.length == 1
 
   # solve the subset by recursively calling count_characters with the
   # array, minus the first element
